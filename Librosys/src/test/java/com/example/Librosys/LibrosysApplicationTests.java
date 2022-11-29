@@ -32,4 +32,8 @@ class LibrosysApplicationTests {
 		assertEquals(2, userService.getAll().size());
 	}
 
+	public void getUserByIdTest(){
+
+	}
+
 }
