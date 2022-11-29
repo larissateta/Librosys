@@ -3,8 +3,8 @@
   margin: 90px auto ;
   padding-left: 80px;
   border: 1px solid #cecece;
-  width: 550px;
-  height: 580px;
+  width: 590px;
+  height: 680px;
   border-radius: 6px;
 }
 .labels{
@@ -16,6 +16,10 @@
   width: 290px;
   border: 1px solid #cecece;
   font-size: 13px;
+  margin-left: 25px;
+}
+.email{
+  margin-right: 70px;
 }
 .form-field{
   padding-top: 30px;
@@ -37,4 +41,7 @@ form{
   text-align: center;
   font-size: 30px;
   padding-top: 20px;
+}
+.dont{
+  margin-top: 50px;
 }
