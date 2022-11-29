@@ -13,7 +13,7 @@ public class Book {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private long id;
 
-    private int ISPN;
+    private long ISPN;
 
     private String title;
 
@@ -29,11 +29,11 @@ public class Book {
         this.pubDate = pubDate;
     }
 
-    public int getISPN() {
+    public long getISPN() {
         return ISPN;
     }
 
-    public void setISPN(int ISPN) {
+    public void setISPN(long ISPN) {
         this.ISPN = ISPN;
     }
 
@@ -56,7 +56,7 @@ public class Book {
     public Book() {
     }
 
-    public Book(long id, int ISPN, String title, String publishers, Date pubDate) {
+    public Book(long id, long ISPN, String title, String publishers, Date pubDate) {
         this.id = id;
         this.ISPN = ISPN;
         this.title = title;
@@ -64,7 +64,7 @@ public class Book {
         this.pubDate = pubDate;
     }
 
-    public Book(int ISPN, String title, String publishers, Date pubDate) {
+    public Book(long ISPN, String title, String publishers, Date pubDate) {
         this.ISPN = ISPN;
         this.title = title;
         Publishers = publishers;
