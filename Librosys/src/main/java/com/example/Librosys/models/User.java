@@ -1,6 +1,8 @@
 package com.example.Librosys.models;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class User {
@@ -15,9 +17,9 @@ public class User {
     @Column(nullable = false, length = 100)
     private String email;
 
-    @OneToOne
-    @JoinColumn(name= "role_id")
-    private Role role;
+//    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+//    @JoinColumn(name = "role_id", nullable = false)
+//    private Role role;
     @Column(nullable = false, length = 100)
     private String password;
 
@@ -32,21 +34,21 @@ public class User {
         this.password = password;
     }
 
-    public User(String firstname, String lastname, String email, Role role, String password) {
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.email = email;
-        this.role = role;
-        this.password = password;
-    }
-
-    public Role getRole() {
-        return role;
-    }
-
-    public void setRole(Role role) {
-        this.role = role;
-    }
+//    public User(String firstname, String lastname, String email, Role role, String password) {
+//        this.firstname = firstname;
+//        this.lastname = lastname;
+//        this.email = email;
+//        this.role = role;
+//        this.password = password;
+//    }
+//
+//    public Role getRole() {
+//        return role;
+//    }
+//
+//    public void setRole(Role role) {
+//        this.role = role;
+//    }
 
     public User(String firstname, String lastname, String email, String password) {
         this.firstname = firstname;
@@ -102,6 +104,7 @@ public class User {
                 ", firstname='" + firstname + '\'' +
                 ", lastname='" + lastname + '\'' +
                 ", email='" + email + '\'' +
+//                ", role=" + role +
                 ", password='" + password + '\'' +
                 '}';
     }

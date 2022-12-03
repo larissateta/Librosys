@@ -22,7 +22,7 @@ public class UserServiceImpl {
         System.out.println("Getting users from database "+ users);
         return users;
     }
-    public User findById(long userId){
+    public User getUserById(long userId){
         Optional<User> findById= userRepo.findById(userId);
         if(findById.isPresent()){
             User user = findById.get();
@@ -30,4 +30,5 @@ public class UserServiceImpl {
         }
         return null;
     }
+
 }

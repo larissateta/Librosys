@@ -10,10 +10,10 @@ export default function Register (){
     const [password, setPassword]=useState("");
 
     const handleClick=(e:any)=>{
-        e.preventDefault();
+        e.preventDefault(); 
         const user= {firstname, lastname, email, password};
         console.log(user);
-        fetch("http://localhost:8080/user/register",{
+        fetch("http://localhost:8080/register",{
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(user)
