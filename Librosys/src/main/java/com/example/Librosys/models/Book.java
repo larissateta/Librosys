@@ -1,8 +1,13 @@
 package com.example.Librosys.models;
 
 
+import net.bytebuddy.asm.Advice;
+
 import javax.persistence.*;
 import java.sql.Date;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeFormatterBuilder;
 
 @Entity
 public class Book {
@@ -14,17 +19,27 @@ public class Book {
 
     private String title;
 
+    private String Author;
+
     private String Publishers;
 
-    private Date pubDate;
-
-    public Date getPubDate() {
-        return pubDate;
+    public String getAuthor() {
+        return Author;
     }
 
-    public void setPubDate(Date pubDate) {
-        this.pubDate = pubDate;
+    public void setAuthor(String author) {
+        Author = author;
     }
+
+    public Book(long ISPN, String title, String author, String publishers) {
+
+        this.ISPN = ISPN;
+        this.title = title;
+        Author = author;
+        Publishers = publishers;
+    }
+
+
 
     public long getISPN() {
         return ISPN;
@@ -53,19 +68,17 @@ public class Book {
     public Book() {
     }
 
-    public Book(long id, long ISPN, String title, String publishers, Date pubDate) {
+    public Book(long id, long ISPN, String title, String publishers) {
         this.id = id;
         this.ISPN = ISPN;
         this.title = title;
         Publishers = publishers;
-        this.pubDate = pubDate;
     }
 
-    public Book(long ISPN, String title, String publishers, Date pubDate) {
+    public Book(long ISPN, String title, String publishers) {
         this.ISPN = ISPN;
         this.title = title;
         Publishers = publishers;
-        this.pubDate = pubDate;
     }
 
     @Override

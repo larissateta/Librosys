@@ -13,6 +13,9 @@ public class BookServiceImp {
     @Autowired
     private BookRepo bookRepo;
 
+    public void saveBook (Book book){
+        bookRepo.save(book);
+    }
     public List<Book> getAll(){
         List<Book> books= bookRepo.findAll();
         return books;

@@ -1,22 +1,23 @@
 .form-container{
   
   margin: 90px auto ;
-  padding-left: 80px;
+  padding-left: 60px;
   border: 1px solid #cecece;
   width: 590px;
   height: 680px;
   border-radius: 6px;
+  padding-bottom: 20px;
 }
 .labels{
   font-size: 16px;
-  margin-right: 40px;
+  padding-right: 50px;
 }
 .input-field{
   padding: 15px 20px;
   width: 290px;
   border: 1px solid #cecece;
   font-size: 13px;
-  margin-left: 25px;
+  margin-left: 15px;
 }
 .email{
   margin-right: 70px;
@@ -44,4 +45,14 @@ form{
 }
 .dont{
   margin-top: 50px;
+}
+.sidebar{
+  margin-top: -12px;
+  height: 65.4rem;
+  width: 300px;
+  background-color: #46b486;
+}
+body{
+  margin: 0;
+  padding: 0;
 }

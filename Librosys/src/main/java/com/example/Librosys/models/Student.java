@@ -1,14 +1,12 @@
 package com.example.Librosys.models;
 
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
 
 @Entity
-public class User {
+public class Student {
     @Id
     @GeneratedValue
-    private long userId;
+    private long student_id;
 
     @Column(nullable = false, length = 100)
     private String firstname;
@@ -17,52 +15,33 @@ public class User {
     @Column(nullable = false, length = 100)
     private String email;
 
-//    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-//    @JoinColumn(name = "role_id", nullable = false)
-//    private Role role;
     @Column(nullable = false, length = 100)
     private String password;
 
-    public User() {
+    public Student() {
     }
 
-    public User(long userId, String firstname, String lastname, String email, String password) {
-        this.userId = userId;
+    public Student(long student_id, String firstname, String lastname, String email, String password) {
+        this.student_id = student_id;
         this.firstname = firstname;
         this.lastname = lastname;
         this.email = email;
         this.password = password;
     }
 
-//    public User(String firstname, String lastname, String email, Role role, String password) {
-//        this.firstname = firstname;
-//        this.lastname = lastname;
-//        this.email = email;
-//        this.role = role;
-//        this.password = password;
-//    }
-//
-//    public Role getRole() {
-//        return role;
-//    }
-//
-//    public void setRole(Role role) {
-//        this.role = role;
-//    }
-
-    public User(String firstname, String lastname, String email, String password) {
+    public Student(String firstname, String lastname, String email, String password) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.email = email;
         this.password = password;
     }
 
-    public long getUserId() {
-        return userId;
+    public long getStudent_id() {
+        return student_id;
     }
 
-    public void setUserId(long userId) {
-        this.userId = userId;
+    public void setUserId(long student_id) {
+        this.student_id = student_id;
     }
 
     public String getFirstname() {
@@ -100,11 +79,10 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-                "userId=" + userId +
+                "userId=" + student_id +
                 ", firstname='" + firstname + '\'' +
                 ", lastname='" + lastname + '\'' +
                 ", email='" + email + '\'' +
-//                ", role=" + role +
                 ", password='" + password + '\'' +
                 '}';
     }
