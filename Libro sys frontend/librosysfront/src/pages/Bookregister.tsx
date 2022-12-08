@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { render } from "react-dom";
+import { Sidebar } from "../Components/Sidebar";
+
 
 export default class BookRegister extends React.Component<any, any>{
     constructor(props:any){
@@ -45,7 +46,7 @@ export default class BookRegister extends React.Component<any, any>{
         await axios.post("http://localhost:8080/bookRegister", book).then (res => {
             if(res.status === 200){
                 alert("Book Registered Successfully");
-                window.location.reload();
+                window.location.pathname = "/books";
             }
         });
         this.setState({
@@ -57,7 +58,9 @@ export default class BookRegister extends React.Component<any, any>{
     }
 render(){    
     return(
-        <div>
+        <div className="container">
+            <Sidebar/>
+            <div>
             <div className="form-container">
                 <h1 className="title">Register a book</h1>
                 <form>
@@ -84,6 +87,8 @@ render(){
                 </form>
             </div>  
                     
+            </div>
+            
         </div>
 
     )}

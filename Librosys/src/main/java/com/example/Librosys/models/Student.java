@@ -15,25 +15,21 @@ public class Student {
     @Column(nullable = false, length = 100)
     private String email;
 
-    @Column(nullable = false, length = 100)
-    private String password;
 
     public Student() {
     }
 
-    public Student(long student_id, String firstname, String lastname, String email, String password) {
+    public Student(long student_id, String firstname, String lastname, String email) {
         this.student_id = student_id;
         this.firstname = firstname;
         this.lastname = lastname;
         this.email = email;
-        this.password = password;
     }
 
-    public Student(String firstname, String lastname, String email, String password) {
+    public Student(String firstname, String lastname, String email) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.email = email;
-        this.password = password;
     }
 
     public long getStudent_id() {
@@ -68,13 +64,6 @@ public class Student {
         this.email = email;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
 
     @Override
     public String toString() {
@@ -83,7 +72,6 @@ public class Student {
                 ", firstname='" + firstname + '\'' +
                 ", lastname='" + lastname + '\'' +
                 ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
                 '}';
     }
 }

@@ -32,8 +32,8 @@ public class bookServiceTest {
     DateFormat simpleDate= new SimpleDateFormat("yyyy-MM-dd");
     @Test
     public void getAll_books() throws ParseException {
-        when(bookRepo.findAll()).thenReturn(Arrays.asList(new Book(19921239, "After", "Anna Todd","Bakame Edition", "02/01/2002"),
-                new Book(12934888, "After we fell","Anna Todd", "Bakame Edition", "02/12/2022")));
+        when(bookRepo.findAll()).thenReturn(Arrays.asList(new Book(19921239, "After", "Anna Todd","Bakame Edition"),
+                new Book(12934888, "After we fell","Anna Todd", "Bakame Edition")));
         assertEquals(2, bookServiceImp.getAll().size());
     }
 }

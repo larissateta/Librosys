@@ -27,8 +27,8 @@ class LibrosysApplicationTests {
 	private StudentRepo userRepo;
 	@Test
 	public void getUsersTest(){
-		when(userRepo.findAll()).thenReturn(Stream.of(new Student("larissa", "teta", "tetalarissa@gmail.com", "Pierra15"),
-				new Student("hirwa", "Gabriel", "hirwa@gmail.com", "Hirwa2")).collect(Collectors.toList()));
+		when(userRepo.findAll()).thenReturn(Stream.of(new Student("larissa", "teta", "tetalarissa@gmail.com"),
+				new Student("hirwa", "Gabriel", "hirwa@gmail.com")).collect(Collectors.toList()));
 		assertEquals(2, userService.getAll().size());
 	}
 
