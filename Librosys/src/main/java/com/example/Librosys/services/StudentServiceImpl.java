@@ -30,5 +30,12 @@ public class StudentServiceImpl {
         }
         return null;
     }
+    public void deleteStudent(long student_id){
+        Optional<Student> findbyId= studentRepo.findById(student_id);
+        if(findbyId.isPresent()){
+            Student student = findbyId.get();
+            studentRepo.delete(student);
+        }
+    }
 
 }

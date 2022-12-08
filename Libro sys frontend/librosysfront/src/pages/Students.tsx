@@ -11,7 +11,14 @@ export default class Students extends React.Component<any,any>{
         this.state = {
             students: []
         }
+        this.deleteStudent =  this.deleteStudent.bind(this);
     }
+    deleteStudent(id:any){
+        axios.delete(`http://localhost:8080/student/${id}`,id).then(res => {
+            this.setState({students: this.state.students.filter((student:any) => student.student_id !== id)});
+        });
+    }
+
 componentDidMount() {
     axios.get("http://localhost:8080/getStudents").then(res => {
         this.setState({students: res.data})
@@ -36,6 +43,7 @@ componentDidMount() {
                                 <th>First Name</th>
                                 <th>Last Name</th>
                                 <th>Email</th>
+                                <th>Actions Delete</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -46,6 +54,9 @@ componentDidMount() {
                                         <td>{student.firstname}</td>
                                         <td>{student.lastname}</td>
                                         <td>{student.email}</td>
+                                        <td>
+                                            <button onClick ={()=> this.deleteStudent(student.student_id)} className="delete">Delete</button>
+                                        </td>
                                     </tr>
                                 )
                             }

@@ -1,6 +1,7 @@
 package com.example.Librosys.services;
 
 import com.example.Librosys.models.Book;
+import com.example.Librosys.models.Student;
 import com.example.Librosys.repositories.BookRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,5 +28,12 @@ public class BookServiceImp {
             return book;
         }
         return null;
+    }
+    public void deleteBook(long id){
+        Optional<Book> findbyId= bookRepo.findById(id);
+        if(findbyId.isPresent()){
+            Book book = findbyId.get();
+            BookRepo.delete(book);
+        }
     }
 }

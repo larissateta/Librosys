@@ -44,5 +44,10 @@ public class StudentController {
         u.setFirstname(student.getFirstname());
         studentService.saveStudent(u);
     }
+    @DeleteMapping(path = "/student/{id}")
+    public ResponseEntity<String> deleteStudent(@PathVariable("id") Long student_id){
+        studentService.deleteStudent(student_id);
 
+        return new ResponseEntity<String>("Student Deleted successfully!", HttpStatus.OK);
+    }
 }

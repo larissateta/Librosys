@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { GoDashboard } from "react-icons/go"
 import { HiUsers } from "react-icons/hi"
@@ -8,6 +8,19 @@ import { AiFillCaretDown } from "react-icons/ai"
 
 
 export function Sidebar(){
+    document.addEventListener("DOMContentLoaded", ()=>{
+        document.querySelectorAll(".sidebar .item").forEach((element) => {
+            element.addEventListener("click", e =>{
+                let nextEl = element.nextElementSibling;
+                let parentEl = element.parentElement;
+
+                if(nextEl){
+                    e.preventDefault();
+                    
+                }
+            })
+        })
+    })
     return(
         <div className='sidebar'>
             <div className='logo'>
@@ -22,15 +35,15 @@ export function Sidebar(){
                     <span className='icon'><AiTwotoneBook/></span>
                     <Link to="/books" className="item">Books</Link>
                 </li>
-                <li className='has-sub'>
+                <li className={`has-sub`}>
                     <span className='icon'><BiTransfer/></span>
                     <Link to="/transactions" className="item">
                         Transactions
                         <span className="icon1"><AiFillCaretDown/></span>
                     </Link>
-                    <ul className='sub collapse'>
+                    <ul className='sub' data-toogle="collapse" aria-expanded="true" aria-controls="collapseOne">
                         <li>
-                            <Link to="/transactions" className="item">Borrowed</Link>
+                            <Link to="/transactions" className="item collapse show" >Borrowed</Link>
                         </li>
                         <li>
                             <Link to="/transactions" className="item">Returned</Link>

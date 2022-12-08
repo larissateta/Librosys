@@ -60,17 +60,17 @@ export default class Register extends React.Component<any, any>{
                     <form>
                         <div className="form-field">
                             <label className="labels">First Name: </label>
-                            <input className="input-field" type={"text"} placeholder={"Enter your firstname"} value={this.state.txtfirstname} onChange ={ this.handleChangeFirstname}/>
+                            <input id="firstname" className="input-field" type={"text"} placeholder={"Enter your firstname"} value={this.state.txtfirstname} onChange ={ this.handleChangeFirstname} required/>
                         </div>
                         <div className="form-field">
                             <label className="labels">Last Name: </label>
-                            <input className="input-field" type={"text"} placeholder={"Enter your lastname"} value={this.state.txtlastname} onChange = {this.handleChangeLastname}/>
+                            <input id="lastname" className="input-field" type={"text"} placeholder={"Enter your lastname"} value={this.state.txtlastname} onChange = {this.handleChangeLastname} required/>
                         </div>
                         <div className="form-field">
                             <label className="labels">Email Add:</label>
-                            <input className="input-field email" type={"text"} placeholder={"Enter your email"} value={this.state.txtemail} onChange = {this.handleChangeEmail} />
+                            <input id="email"  className="input-field email" type={"text"} placeholder={"Enter your email"} value={this.state.txtemail} onChange = {this.handleChangeEmail} required />
                         </div>
-                        <input type={"submit"} className="submit-btn" onClick={this.onSubmit}/>
+                        <input type={"submit"} className="submit-btn" onClick={this.onSubmit} data-cy="submit"/>
                         
                         
                     </form>

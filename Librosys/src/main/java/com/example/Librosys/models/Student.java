@@ -67,8 +67,8 @@ public class Student {
 
     @Override
     public String toString() {
-        return "User{" +
-                "userId=" + student_id +
+        return "Student{" +
+                "Student_id=" + student_id +
                 ", firstname='" + firstname + '\'' +
                 ", lastname='" + lastname + '\'' +
                 ", email='" + email + '\'' +

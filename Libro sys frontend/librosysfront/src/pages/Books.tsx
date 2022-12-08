@@ -9,6 +9,12 @@ export default class Books extends React.Component<any, any>{
         this.state = {
             books: []
         }
+        this.deleteBook = this.deleteBook.bind(this);
+    }
+    deleteBook(id:any){
+        axios.delete(`http://localhost:8080/book/${id}`,id).then(res => {
+            this.setState({books: this.state.books.filter((book:any) => book.id !== id)});
+        });
     }
 componentDidMount() {
     axios.get("http://localhost:8080/books").then(res => {
@@ -35,6 +41,7 @@ componentDidMount() {
                                 <th>Author</th>
                                 <th>ISPN</th>
                                 <th>Publishers</th>
+                                <th>Action Delete</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -46,6 +53,9 @@ componentDidMount() {
                                         <td>{book.author}</td>
                                         <td>{book.ispn}</td>
                                         <td> {book.publishers} </td>
+                                        <td>
+                                            <button onClick ={()=> this.deleteBook(book.id)} className="delete">Delete</button>
+                                        </td>
                                     </tr>
                                 )
                             }

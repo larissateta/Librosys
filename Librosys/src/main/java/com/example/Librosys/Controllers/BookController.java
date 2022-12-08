@@ -4,6 +4,7 @@ import com.example.Librosys.models.Book;
 import com.example.Librosys.services.BookServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -25,4 +26,11 @@ public class BookController {
         public List<Book> findAllBooks(){
             return bookService.getAll();
         }
+
+    @DeleteMapping(path = "/student/{id}")
+    public ResponseEntity<String> deleteEmployee(@PathVariable("id") Long id){
+        bookService.deleteBook(id);
+
+        return new ResponseEntity<String>("Book Deleted successfully!", HttpStatus.OK);
+    }
 }

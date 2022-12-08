@@ -66,21 +66,21 @@ render(){
                 <form>
                     <div className="form-field">
                         <label className="labels">Book Title: </label>
-                        <input className="input-field" type={"text"} placeholder={"Enter book title"} value={this.state.txtTitle}  onChange = {this.handleChangeTitle} />
+                        <input id="title"className="input-field" type={"text"} placeholder={"Enter book title"} value={this.state.txtTitle}  onChange = {this.handleChangeTitle} />
                     </div>
                     <div className="form-field">
                         <label className="labels">Author: &nbsp; &nbsp; &nbsp;</label>
-                        <input className="input-field" type={"text"} placeholder={"Enter the author's name"} value={this.state.txtAuthor} onChange = {this.handleChangeAuthor} />
+                        <input id="author"className="input-field" type={"text"} placeholder={"Enter the author's name"} value={this.state.txtAuthor} onChange = {this.handleChangeAuthor} />
                     </div>
                     <div className="form-field">
                         <label className="labels">ISPN: &nbsp; &nbsp; &nbsp; &nbsp;</label>
-                        <input className="input-field email" type={"text"} placeholder={"Enter ISPN of the book"} value={this.state.txtIspn} onChange = {this.handleChangeIspn}/>
+                        <input id="ispn"className="input-field email" type={"text"} placeholder={"Enter ISPN of the book"} value={this.state.txtIspn} onChange = {this.handleChangeIspn}/>
                     </div>
                     <div className="form-field">
                         <label className="labels">Publisher: </label>
-                        <input className="input-field" type={"text"} placeholder={"Enter publishers"} value={this.state.txtPublishers} onChange={this.handleChangePublishers}/>
+                        <input id="publishers"className="input-field" type={"text"} placeholder={"Enter publishers"} value={this.state.txtPublishers} onChange={this.handleChangePublishers}/>
                     </div>
-                    <input type={"submit"} className="submit-btn" value={"Register"} onClick={this.onSubmit}/>
+                    <input type={"submit"} className="submit-btn" value={"Register"} onClick={this.onSubmit} data-cy="submit"/>
                     
                     
                     
