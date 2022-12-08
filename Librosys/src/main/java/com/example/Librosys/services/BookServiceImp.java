@@ -33,7 +33,7 @@ public class BookServiceImp {
         Optional<Book> findbyId= bookRepo.findById(id);
         if(findbyId.isPresent()){
             Book book = findbyId.get();
-            BookRepo.delete(book);
+//            BookRepo.delete(book);
         }
     }
 }

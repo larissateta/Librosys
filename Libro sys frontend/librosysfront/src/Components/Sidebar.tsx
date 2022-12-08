@@ -4,23 +4,9 @@ import { GoDashboard } from "react-icons/go"
 import { HiUsers } from "react-icons/hi"
 import { AiTwotoneBook } from "react-icons/ai"
 import { BiTransfer } from "react-icons/bi"
-import { AiFillCaretDown } from "react-icons/ai"
 
 
 export function Sidebar(){
-    document.addEventListener("DOMContentLoaded", ()=>{
-        document.querySelectorAll(".sidebar .item").forEach((element) => {
-            element.addEventListener("click", e =>{
-                let nextEl = element.nextElementSibling;
-                let parentEl = element.parentElement;
-
-                if(nextEl){
-                    e.preventDefault();
-                    
-                }
-            })
-        })
-    })
     return(
         <div className='sidebar'>
             <div className='logo'>
@@ -39,16 +25,7 @@ export function Sidebar(){
                     <span className='icon'><BiTransfer/></span>
                     <Link to="/transactions" className="item">
                         Transactions
-                        <span className="icon1"><AiFillCaretDown/></span>
                     </Link>
-                    <ul className='sub' data-toogle="collapse" aria-expanded="true" aria-controls="collapseOne">
-                        <li>
-                            <Link to="/transactions" className="item collapse show" >Borrowed</Link>
-                        </li>
-                        <li>
-                            <Link to="/transactions" className="item">Returned</Link>
-                        </li>
-                    </ul>
                 </li>
                 <li>
                     <span className='icon'><HiUsers/></span>

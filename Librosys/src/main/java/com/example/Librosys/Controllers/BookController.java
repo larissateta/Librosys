@@ -27,8 +27,8 @@ public class BookController {
             return bookService.getAll();
         }
 
-    @DeleteMapping(path = "/student/{id}")
-    public ResponseEntity<String> deleteEmployee(@PathVariable("id") Long id){
+    @DeleteMapping(path = "/book/{id}")
+    public ResponseEntity<String> deleteBook(@PathVariable("id") Long id){
         bookService.deleteBook(id);
 
         return new ResponseEntity<String>("Book Deleted successfully!", HttpStatus.OK);

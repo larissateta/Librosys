@@ -10,7 +10,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @SpringBootApplication(exclude ={SecurityAutoConfiguration.class})
 @EntityScan(basePackages = {"com.example.Librosys.models"})
 @ComponentScan(basePackages = {"com.example.Librosys.Controllers", "com.example.Librosys.services"})
-@EnableJpaRepositories(basePackages = "com.example.Librosys.repositories")
+@EnableJpaRepositories(basePackages = {"com.example.Librosys.repositories"})
 public class LibrosysApplication {
 
 	public static void main(String[] args) {
