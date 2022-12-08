@@ -1,8 +1,8 @@
 package com.example.Librosys;
 
-import com.example.Librosys.models.User;
-import com.example.Librosys.repositories.UserRepo;
-import com.example.Librosys.services.UserServiceImpl;
+import com.example.Librosys.models.Student;
+import com.example.Librosys.repositories.StudentRepo;
+import com.example.Librosys.services.StudentServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,15 +21,19 @@ import static org.mockito.Mockito.when;
 class LibrosysApplicationTests {
 
 	@Autowired
-	private UserServiceImpl userService;
+	private StudentServiceImpl userService;
 
 	@MockBean
-	private UserRepo userRepo;
+	private StudentRepo userRepo;
 	@Test
 	public void getUsersTest(){
-		when(userRepo.findAll()).thenReturn(Stream.of(new User("larissa", "teta", "tetalarissa@gmail.com", "Pierra15"),
-				new User("hirwa", "Gabriel", "hirwa@gmail.com", "Hirwa2")).collect(Collectors.toList()));
+		when(userRepo.findAll()).thenReturn(Stream.of(new Student("larissa", "teta", "tetalarissa@gmail.com"),
+				new Student("hirwa", "Gabriel", "hirwa@gmail.com")).collect(Collectors.toList()));
 		assertEquals(2, userService.getAll().size());
+	}
+
+	public void getUserByIdTest(){
+
 	}
 
 }
