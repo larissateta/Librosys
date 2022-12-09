@@ -1,18 +1,13 @@
 package com.example.Librosys.models;
 
 
-import net.bytebuddy.asm.Advice;
-
 import javax.persistence.*;
-import java.sql.Date;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.time.format.DateTimeFormatterBuilder;
+import java.util.Set;
 
 @Entity
 public class Book {
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue
     private long id;
     @Column(unique = true)
     private long ISPN;
@@ -22,6 +17,9 @@ public class Book {
     private String Author;
 
     private String Publishers;
+
+    @OneToMany(mappedBy = "book")
+    private Set<Transaction> transactions;
 
     public String getAuthor() {
         return Author;
@@ -40,6 +38,21 @@ public class Book {
     }
 
 
+    public Book(long id, long ISPN, String title, String author, String publishers) {
+        this.id = id;
+        this.ISPN = ISPN;
+        this.title = title;
+        Author = author;
+        Publishers = publishers;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
 
     public long getISPN() {
         return ISPN;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { Sidebar } from "../Components/Sidebar";
 
@@ -46,9 +46,8 @@ export default class Register extends React.Component<any, any>{
             lastname: "",
             email: ""
         });
-
-
     }
+    
 
     render(){
         return(
