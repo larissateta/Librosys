@@ -2,6 +2,7 @@ package com.example.Librosys.models;
 
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 public class Book {
@@ -17,9 +18,8 @@ public class Book {
 
     private String Publishers;
 
-    @ManyToOne
-    @JoinColumn(name="transaction_id", nullable = false)
-    private Transaction transaction;
+    @OneToMany(mappedBy = "book")
+    private Set<Transaction> transactions;
 
     public String getAuthor() {
         return Author;
@@ -38,6 +38,21 @@ public class Book {
     }
 
 
+    public Book(long id, long ISPN, String title, String author, String publishers) {
+        this.id = id;
+        this.ISPN = ISPN;
+        this.title = title;
+        Author = author;
+        Publishers = publishers;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
 
     public long getISPN() {
         return ISPN;

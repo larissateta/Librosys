@@ -9,9 +9,10 @@ public class Transaction {
     @GeneratedValue
     private long transaction_id;
 
-    @OneToMany(mappedBy = "transaction")
-    private Set<Book> books;
 
+    @ManyToOne
+    @JoinColumn(name="book_id", nullable = false)
+    private Book book;
     @Enumerated(EnumType.STRING)
     private Status status;
 
@@ -20,8 +21,8 @@ public class Transaction {
     private Student student;
 
 
-    public Transaction(Set<Book> books, Status status, Student student) {
-        this.books = books;
+    public Transaction(Book book,  Student student, Status status) {
+        this.book = book;
         this.status = status;
         this.student = student;
     }
@@ -38,12 +39,12 @@ public class Transaction {
         this.transaction_id = transaction_id;
     }
 
-    public Set<Book> getBooks() {
-        return books;
+    public Book getBook() {
+        return book;
     }
 
-    public void setBooks(Set<Book> books) {
-        this.books = books;
+    public void setBook(Book book) {
+        this.book = book;
     }
 
     public Student getStudent() {
